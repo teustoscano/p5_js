@@ -3,6 +3,17 @@ var colorR = 0;
 var colorG = 0;
 var colorB = 0;
 
+var circle1 = {
+	x: 0,
+	y: 200,
+	diameter: 50
+};
+var circle2 = {
+	x: 0,
+	y: 250,
+	diameter: 50
+};
+
 function setup(){
 	createCanvas(640, 360);
 }
@@ -14,7 +25,10 @@ function draw(){
 	//ellipse
 	noStroke();
 	fill(colorR+=0.4, colorG+=0.4, colorB+=0.4);
-	ellipse(circleX+=1, 100, 40, 40);
+	ellipse(circle1.x, circle1.y, circle1.diameter, circle1.diameter);
+	ellipse(circle2.x, circle2.y, circle2.diameter, circle2.diameter);
+	circle1.x += 1;
+	circle2.x += 1;
 }
 
 function mousePressed(){
