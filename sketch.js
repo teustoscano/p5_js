@@ -1,8 +1,15 @@
-var circleX = 0;
-var colorR = 0;
-var colorG = 0;
-var colorB = 0;
 var color = 0;
+
+var spot = {
+	x: 100,
+	y: 50
+};
+
+var col = {
+	r: 0,
+	g: 0,
+	b: 0
+};
 
 var circle1 = {
 	x: 0,
@@ -26,7 +33,14 @@ function draw(){
 
 	//ellipse
 	noStroke();
-	fill(colorR+=0.4, colorG+=0.4, colorB+=0.4);
+	
+	spot.x = random(0, width);
+	spot.y = random(0, height);
+
+	fill(col.r, col.g, col.b);
+	ellipse(spot.x, spot.y, 24, 24);
+	
+	fill(col.r+=0.4, col.g+=0.4, col.b+=0.4);
 	ellipse(circle1.x, circle1.y, circle1.diameter, circle1.diameter);
 	ellipse(circle2.x, circle2.y, circle2.diameter, circle2.diameter);
 	circle1.x += 1;
