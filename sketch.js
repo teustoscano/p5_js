@@ -2,6 +2,7 @@ var circleX = 0;
 var colorR = 0;
 var colorG = 0;
 var colorB = 0;
+var color = 0;
 
 var circle1 = {
 	x: 0,
@@ -20,7 +21,8 @@ function setup(){
 
 function draw(){
 	//background
-	background(250, 250, 100);
+	color = map(mouseX, 0, 640, 0, 255); 
+	background(color);
 
 	//ellipse
 	noStroke();
