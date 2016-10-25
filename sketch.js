@@ -3,7 +3,14 @@ function setup () {
 }
 
 function draw() {
-	rect(100, 200, 75, 150);
-	line(50, 100, 90, 200);
-	arc(50, 50, 80, 80, 0, PI+QUARTER_PI, CHORD);
+	//background
+	background(250, 250, 100);
+
+	//ellipse
+	fill(250, 200, 200);
+	ellipse(100, 100, 100, 100);
+
+	//rectangle
+	fill(200, 250, 200);
+	rect(400, 100, 50, 50);
 }
