@@ -1,3 +1,6 @@
+var x = 0;
+var speed = 1;
+
 function setup(){
 	createCanvas(640, 360);
 }
@@ -8,12 +11,13 @@ function draw(){
 	stroke(255);
 	strokeWeight(4);
 	noFill();
-	if (mouseX > width/2){
-		fill(255, 0, 200);
-		ellipse(100, 200, 40, 40);
-		ellipse(500, 200, 40, 40);
+	if (x > width-51){
+		speed = -0.8;
+		fill('red');
 	}
-	ellipse(300, 200, 100, 100);
+	ellipse(x, 200, 100, 100);
+
+	x += speed;
 }
 
 function mousePressed(){
