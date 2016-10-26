@@ -7,16 +7,16 @@ function draw(){
 	stroke(255);
 	strokeWeight(4);
 	noFill();
-	if (mouseX > 50){
-		ellipse(300, 200, 100, 100);
-	}if(mouseX > 150){
-		rect(300, 200, 100, 100);
-	}if(mouseX > 200){
-		line(0, 0, width, height);
-	}else {
-		point(300, 200);
+	if (mouseX > 250 && mouseX < 350 && mouseY > 150 && mouseY < 250){
+		fill(255, 0, 100);
 	}
 
+	if(mouseIsPressed){
+		background(100,255,100);
+	}
+
+	rectMode(CENTER);
+	rect(300, 200, 100, 100);
 	
 
 }
