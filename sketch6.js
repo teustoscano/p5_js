@@ -2,9 +2,6 @@ var bubbles = [];
 
 function setup(){
 	createCanvas(600, 400);
-	for(var i = 0; i < 15;i++){
-		bubbles[i] = new Bubble();
-	}
 }
 
 function draw(){
@@ -15,9 +12,13 @@ function draw(){
 	}
 }
 
-function Bubble() {
-	this.x = 300,
-	this.y = 200,
+function mousePressed(){
+	bubbles.push(new Bubble(mouseX, mouseY));
+}
+
+function Bubble(x, y) {
+	this.x = x,
+	this.y = y,
 
 	this.display = function(){
 		stroke(255);
