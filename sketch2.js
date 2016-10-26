@@ -1,5 +1,5 @@
 var x = 0;
-var speed = 1;
+var speed = 1.5;
 
 function setup(){
 	createCanvas(640, 360);
@@ -11,11 +11,11 @@ function draw(){
 	stroke(255);
 	strokeWeight(4);
 	noFill();
-	if (x > width-51){
-		speed = -0.8;
+	if (x > width-101 || x < 0){
 		fill('red');
+		speed *= -1;
 	}
-	ellipse(x, 200, 100, 100);
+	ellipse(x+51, 200, 100, 100);
 
 	x += speed;
 }
