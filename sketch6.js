@@ -35,7 +35,7 @@ function Bubble(x, y, img) {
 
 	this.display = function(){
 		imageMode(CENTER);
-		image(this.img, this.x, this.y);
+		image(this.img, this.x, this.y, 80,80);
 		//ellipse(this.x, this.y, 24, 24);	
 	},
 	this.move = function(){
