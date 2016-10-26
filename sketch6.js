@@ -16,6 +16,10 @@ function mousePressed(){
 	bubbles.push(new Bubble(mouseX, mouseY));
 }
 
+function keyPressed(){
+	bubbles.splice(0,1);
+}
+
 function Bubble(x, y) {
 	this.x = x,
 	this.y = y,
