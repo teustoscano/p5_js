@@ -7,10 +7,17 @@ function draw(){
 	stroke(255);
 	strokeWeight(4);
 	noFill();
-	if (mouseX > 300){
-		fill(255, 0, 200);
+	if (mouseX > 50){
+		ellipse(300, 200, 100, 100);
+	}if(mouseX > 150){
+		rect(300, 200, 100, 100);
+	}if(mouseX > 200){
+		line(0, 0, width, height);
+	}else {
+		point(300, 200);
 	}
-	ellipse(300, 200, 100, 100);
+
+	
 
 }
 
