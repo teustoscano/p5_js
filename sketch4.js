@@ -8,7 +8,13 @@ function draw(){
 	stroke(255);
 	var x = 0;
 	while (x <= width) {
-		ellipse(x, 200, 25, 25);	
+		fill(200,200,0);
+		ellipse(x, 100, 25, 25);	
+		x += 50;
+	}
+	for(var x = 0; x <= width; x+=50){
+		fill(200,100,100);
+		ellipse(x, 300, 25, 25);	
 		x += 50;
 	}
 	
