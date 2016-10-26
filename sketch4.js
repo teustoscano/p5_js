@@ -1,16 +1,15 @@
 function setup(){
-	createCanvas(640, 360);
+	createCanvas(600, 360);
 }
 
 function draw(){
 	background(0);
 	strokeWeight(4);
 	stroke(255);
-
-	ellipse(0, 200, 25, 25);
-	ellipse(50, 200, 25, 25);
-	ellipse(100, 200, 25, 25);
-	ellipse(150, 200, 25, 25);
-	ellipse(200, 200, 25, 25);
-	ellipse(250, 200, 25, 25);
+	var x = 0;
+	while (x <= width) {
+		ellipse(x, 200, 25, 25);	
+		x += 50;
+	}
+	
 }
