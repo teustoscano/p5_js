@@ -4,12 +4,12 @@ var sliderPan;
 var sliderRate;
 var button;
 var jumpButton;
+var amp;
 
 function setup() {
-	createCanvas(300, 200);
+	createCanvas(600, 400);
 	song = loadSound("Birds_Of_Prey.ogg", loaded);
-	button = createButton("i>");
-	button.mousePressed(tooglePlaying);
+	amp = new p5.Amplitude();
 	//jumpButton = createButton("Jump");
 	//jumpButton.mousePressed(jumpSong);
 	//sliderVolume = createSlider(0, 1, 0.5, 0.01);
@@ -39,14 +39,20 @@ function tooglePlaying () {
 
 function loaded(){
 	//song.play();
+	button = createButton("i>");
+	button.mousePressed(tooglePlaying);
 }
 
 function draw() { 
+	var vol = amp.getLevel();
+	var diam = map(vol, 0, 1, 10, 200);
 	//background(0);
 	//song.setVolume(sliderVolume.value());
 	//song.pan(sliderPan.value());
 	//song.rate(sliderRate.value());
 	//if (song.currentTime() > 5) {
-		background(song.currentTime()*5, 100, 100);
+	background(song.currentTime()*5, 100, 100);
+	fill(0, 200, 255);
+	ellipse(width/2, height/2, diam, diam);
 	//}
 }
