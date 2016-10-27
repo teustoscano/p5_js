@@ -45,14 +45,19 @@ function loaded(){
 
 function draw() { 
 	var vol = amp.getLevel();
-	var diam = map(vol, 0, 1, 10, 200);
+	var diam = map(vol, 0, 1, 10, 300);
 	//background(0);
 	//song.setVolume(sliderVolume.value());
 	//song.pan(sliderPan.value());
 	//song.rate(sliderRate.value());
 	//if (song.currentTime() > 5) {
-	background(song.currentTime()*5, 100, 100);
+	background(song.currentTime()*5, 255, 255);
+	fill(200, 100, 100);
+	ellipse(width/2, height/2, diam+10, diam+10);
 	fill(0, 200, 255);
 	ellipse(width/2, height/2, diam, diam);
+	fill(200, 200, 255);
+	ellipse(width/2, height/2, diam-10, diam-10);
+
 	//}
 }
