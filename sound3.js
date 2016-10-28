@@ -1,15 +1,32 @@
 var song;
+var button;
+var amp;
+
+function preload() {
+	song = loadSound("Joji_Thom.ogg");
+}
 
 function setup(){
 	createCanvas(300, 300);
-	song = loadSound("Joji_Thom.ogg", loaded);
+	
+	amp = new p5.Amplitude();
+
+	button = createButton("Play");
+	button.mousePressed(toggleSong);
 }
 
-function loaded () {
-	song.play();
+function toggleSong(){
+	if(song.isPlaying()){
+		song.pause();
+	}else{
+		song.play();
+	} 
 }
 
 function draw(){
 	background(0);
+	var vol = amp.getLevel();
+
+	ellipse(width/2,height/2, width, vol*200);
 	//sliderFreq.value()
 }
