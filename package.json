@@ -1,0 +1,28 @@
+{
+  "name": "p5_js",
+  "version": "1.0.0",
+  "description": "Tutorial coding rainbow",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/teustoscano/p5_js.git"
+  },
+  "keywords": [
+    "nodes.js",
+    "sockets"
+  ],
+  "author": "Matheus Toscano",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/teustoscano/p5_js/issues"
+  },
+  "homepage": "https://github.com/teustoscano/p5_js#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "socket.io": "^1.5.1"
+  }
+}
