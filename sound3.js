@@ -2,6 +2,8 @@ var song;
 var button;
 var amp;
 
+var volHistory = [];
+
 function preload() {
 	song = loadSound("Joji_Thom.ogg");
 }
@@ -26,7 +28,18 @@ function toggleSong(){
 function draw(){
 	background(0);
 	var vol = amp.getLevel();
+	volHistory.push(vol);
+	noFill();
+	beginShape();
+	for(var i = 0; i < volHistory.length; i++){
+		var y = map(volHistory[i], 0, 1, height, 0);
+		stroke(255);
+		vertex(i, y);
+	}
+	endShape();
 
-	ellipse(width/2,height/2, width, vol*200);
-	//sliderFreq.value()
+	if(volHistory.length > width){
+		volHistory.splice(0, 1);
+	}
+	//ellipse(width/2,height/2, width, vol*200);
 }
