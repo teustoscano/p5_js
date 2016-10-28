@@ -38,8 +38,11 @@ function draw(){
 	}
 	endShape();
 
-	if(volHistory.length > width){
+	if(volHistory.length > width-10){
 		volHistory.splice(0, 1);
 	}
+
+	stroke(255, 0, 0);
+	line(volHistory.length, 0, volHistory.length, height);
 	//ellipse(width/2,height/2, width, vol*200);
 }
