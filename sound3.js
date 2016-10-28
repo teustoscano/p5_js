@@ -10,6 +10,7 @@ function preload() {
 
 function setup(){
 	createCanvas(300, 300);
+	angleMode(DEGREES);
 	
 	amp = new p5.Amplitude();
 
@@ -30,19 +31,20 @@ function draw(){
 	var vol = amp.getLevel();
 	volHistory.push(vol);
 	noFill();
+
+	translate(width/2, height/2);
 	beginShape();
-	for(var i = 0; i < volHistory.length; i++){
-		var y = map(volHistory[i], 0, 1, height/2, 0);
+	for(var i = 0; i < 360; i++){
+		var r = map(volHistory[i], 0, 1, height/2, 0);
+		var x = r * cos(i);
+		var y = r * sin(i);
 		stroke(255);
-		vertex(i, y);
+		vertex(x, y);
 	}
 	endShape();
 
-	if(volHistory.length > width-10){
+	if(volHistory.length > 360){
 		volHistory.splice(0, 1);
 	}
 
-	stroke(255, 0, 0);
-	line(volHistory.length, 0, volHistory.length, height);
-	//ellipse(width/2,height/2, width, vol*200);
 }
