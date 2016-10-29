@@ -2,33 +2,27 @@
 //var xoff2 = 100;
 
 var inc = 0.01;
+var scl = 20;
+var cols;
+var rows;
 
 function setup() {
 	createCanvas(200, 200);
+	cols = floor(width/scl);
+	rows = floor(height/scl);
 }
 
 function draw() {
-	
 	var yoff = 0;
-
-	loadPixels();
-
-	for(var x = 0; x < width; x++){
+	for(var x = 0; x < cols; x++){
 		var xoff = 0;
-		for(var y = 0; y < height; y++){
+		for(var y = 0; y < rows; y++){
 			var index = (x + y * width) * 4;
 			var r = noise(xoff, yoff) * 255;
-			pixels[index+0] = r;
-			pixels[index+1] = r;
-			pixels[index+2] = r;
-			pixels[index+3] = r;
-
 			xoff += 0.01;
+			fill(random(255));
+			rect(x*scl, y*scl, scl, scl);
 		}
 		yoff += 0.01;
 	}
-	updatePixels();
-
-	//stroke(255);
-	//ellipse(x, y, 20, 20);
 }
